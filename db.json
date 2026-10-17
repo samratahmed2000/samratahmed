@@ -1,0 +1,275 @@
+{
+  "site": {
+    "name": "Samrat Ahmed",
+    "role": "AI-Driven Web Application Engineer",
+    "tagline": "Building Modern, Responsive, Production-Oriented & Real-Life Used Web Applications",
+    "shortBio": "I build fast, accessible, real-world web apps with JavaScript, TypeScript, React, Next.js, Node.js, Express.js and MongoDB - using AI-assisted workflows to plan, code, debug and ship with higher quality.",
+    "location": "Bangladesh · Open to Remote",
+    "email": "ah.samrat.1031@gmail.com",
+    "phone": "+8801333094818",
+    "phoneHref": "tel:+8801333094818",
+    "whatsapp": "https://wa.me/8801333094818",
+    "resumeUrl": "/Samrat-Ahmed-Resume.pdf",
+    "availability": "Open to internships · Freelance · Junior roles",
+    "socials": {
+      "github": "https://github.com/samratahmed2000",
+      "linkedin": "https://www.linkedin.com/in/samratahmed2000",
+      "facebook": "https://facebook.com/samratahmed2000",
+      "portfolio": "#home"
+    }
+  },
+  "navLinks": [
+    { "label": "Home", "href": "#home" },
+    { "label": "About", "href": "#about" },
+    { "label": "Skills", "href": "#skills" },
+    { "label": "Projects", "href": "#projects" },
+    { "label": "Process", "href": "#process" },
+    { "label": "Education", "href": "#education" },
+    { "label": "Contact", "href": "#contact" }
+  ],
+  "aboutCards": [
+    {
+      "title": "My Programming Journey",
+      "body": "I started with HTML & CSS, then fell in love with JavaScript - turning static pages into living interfaces. React taught me component thinking, Next.js taught me full-stack thinking, Node & MongoDB taught me to model real data. AI as a pair-programmer help me a lot."
+    },
+    {
+      "title": "Work I Enjoy Most",
+      "body": "Responsive dashboard, thinking real-life used digital product, seamless git workflows. I love taking a simple idea → scoped MVP → deployed URL with docs."
+    },
+    {
+      "title": "Hobbies, Interests & Goals",
+      "body": "I love to do writings, walking alone in solitude, getting drenched in the rain and traveling. My interests are to guiding junior to learn code & Programming. My actual goal is build a system to help people who needs daily life digital solutions."
+    }
+  ],
+  "processSteps": [
+    {
+      "step": "01 · Planning",
+      "title": "Scope with AI, decide like an engineer",
+      "body": "I draft user stories, data models and page maps with AI, then prune ruthlessly into an MVP checklist. AI helps me spot missing edge cases (empty states, auth gaps, mobile layouts) before I write code.",
+      "prompt": "“Break this shop idea into MVP vs v2, with DB schema”"
+    },
+    {
+      "step": "02 · Coding",
+      "title": "Generate drafts, craft the final",
+      "body": "AI scaffolds boilerplate and alternative implementations; I choose, refactor and type strictly. Every AI suggestion gets reviewed for accessibility, naming and bundle cost — I never paste blindly.",
+      "prompt": "“3 ways to model cart state — tradeoffs?”"
+    },
+    {
+      "step": "03 · Debugging",
+      "title": "Narrow, reproduce, fix at the root",
+      "body": "I paste real errors + minimal repros, ask AI for hypotheses ranked by likelihood, then verify with logs and devtools. Fixes include regression notes so the same bug can't return quietly.",
+      "prompt": "“JWT 401 only on refresh — 3 hypotheses?”"
+    },
+    {
+      "step": "04 · Testing",
+      "title": "Checklists today, automation tomorrow",
+      "body": "AI generates manual test matrices (devices, roles, edge inputs) and starter Vitest/Playwright cases. I run Lighthouse + keyboard-only passes on every featured build.",
+      "prompt": "“Test matrix for checkout + cart sync”"
+    }
+  ],
+  "projects": [
+    {
+      "slug": "bazarDor",
+      "title": "BazarDor - Price Comparison Platform",
+      "tagline": "Product prices & user account management",
+      "description": "BazarDor combines product & market price comparison, and user account management in a single web application.",
+      "longDescription": [
+        "BazarDor is a Bangla-focused product price comparison platform designed to help users explore product prices, understand market trends, and make more informed purchasing decisions. The platform provides a convenient way to browse products, examine available price ranges, and identify products whose prices are increasing or decreasing, making it easier for users to stay informed about changing market conditions. BazarDor features dedicated sections for rising and falling prices, allowing users to discover price movements and compare product information more efficiently. Its product sorting functionality enhances the browsing experience by helping users organize listings and find relevant products with greater ease. By bringing product information and price trends together in one platform, BazarDor aims to make market price exploration more accessible and user-friendly for Bangla-speaking consumers. The platform also includes a secure, user-friendly authentication system powered by Better Auth, supporting email and password authentication as well as Google and GitHub sign-in options. Registered users can access their accounts, view their profile information, and update their personal details through the profile management features. Built with Next.js, React, and TypeScript, BazarDor uses a modern web development architecture to deliver a responsive and maintainable user experience. Better Auth integrates with MongoDB for authentication data storage, while React Icons provides interface icons, React Toastify handles toast notifications, and react-marquee-text supports scrolling text elements within the interface. Overall, BazarDor combines product price comparison, market price movement tracking, intuitive product browsing, and user account management in a single web application. Its goal is to help users better understand product pricing and navigate market information with greater convenience and confidence."
+      ],
+      "image": "/images/project-bazardor.png",
+      "gradient": "from-emerald-400 via-teal-500 to-cyan-600",
+      "technologies": ["Next.js", "React.js", "TypeScript", "BetterAuth"],
+      "keyFeatures": [
+        "Product price comparison",
+        "Rising and falling prices",
+        "Multiple sign-in options",
+        "Product sorting",
+        "User profile management"
+      ],
+      "challenges": [
+        "Manage dynamic routes for categories & products",
+        "Sign in & sign up option setup",
+        "sorting product without string slug"
+      ],
+      "engineeringDecisions": [
+        "Secure private routes from un-authorized users"
+      ],
+      "futureImprovements": [
+        "Stripe / SSLCommerz payment integration",
+        "MongoDB connections for hot product queries"
+      ],
+      "liveUrl": "https://bazardor-assignment-07.vercel.app",
+      "githubUrl": "https://github.com/samratahmed2000/assignment-07",
+      "featured": true,
+      "year": "2026",
+      "role": "Frontend Engineer"
+    },
+    {
+      "slug": "fit-log",
+      "title": "FitLog - Workout Tracking App",
+      "tagline": "Build a personalized plan for today's workout",
+      "description": "A modern workout tracking web application built with Next.js. Browse workouts, view detailed exercise information.",
+      "longDescription": [
+        "A modern workout tracking web application built with Next.js. Browse workouts, view detailed exercise information, save workouts for later, and build a personalized plan for today's workout."
+      ],
+      "image": "/images/project-fit-log.png",
+      "gradient": "from-emerald-300 via-green-500 to-emerald-700",
+      "technologies": ["React", "Next.js", "JavaScript", "Tailwind CSS"],
+      "keyFeatures": [
+        "Add and Remove workouts to Today's Plan",
+        "Save workout for Later",
+        "Mark as Done workout"
+      ],
+      "challenges": ["Tracking dynamic pages using slug"],
+      "engineeringDecisions": [],
+      "futureImprovements": [],
+      "liveUrl": "https://assignment-06-fit-log.vercel.app",
+      "githubUrl": "https://github.com/samratahmed2000/assignment-06",
+      "featured": true,
+      "year": "2026",
+      "role": "Frontend Engineer"
+    },
+    {
+      "slug": "devStack",
+      "title": "DevStack - Technology Stack Builder",
+      "tagline": "Helps developers explore different technologies",
+      "description": "DevStack is a simple and interactive web app. It helps explore different technologies and build ideal development stack.",
+      "longDescription": [
+        "DevStack is a simple and interactive web application that helps developers explore different technologies and build their ideal development stack. Users can view details such as difficulty and rating, and add their preferred technologies to their stack. They can also remove individual technologies or clear the entire stack. The application provides categories such as frontend, backend, database, and development tools, allowing users to compare available options and create a personalized technology stack."
+      ],
+      "image": "/images/project-devstack.png",
+      "gradient": "from-teal-300 via-emerald-500 to-green-800",
+      "technologies": ["React.js", "TypeScript", "Tailwind CSS"],
+      "keyFeatures": [
+        "Add Technology to Stack",
+        "Remove One Technology",
+        "Remove All Technologies"
+      ],
+      "challenges": [
+        "State management for the different paths",
+        "Designing a UI that works on mobile and desktop"
+      ],
+      "engineeringDecisions": ["Using context api concept to managing states"],
+      "futureImprovements": [
+        "Adding different stack to explore more skills",
+        "Roadmap based on stack"
+      ],
+      "liveUrl": "https://assignment-05-devstack.vercel.app",
+      "githubUrl": "https://github.com/samratahmed2000/assignment-05",
+      "featured": true,
+      "year": "2026",
+      "role": "Frontend Engineer"
+    }
+  ],
+  "skillCategories": [
+    {
+      "id": "frontend",
+      "title": "Frontend",
+      "description": "Interfaces users love to touch",
+      "skills": [
+        { "name": "HTML5 / CSS3", "level": 90, "status": "learned" },
+        { "name": "Tailwind CSS", "level": 88, "status": "learned" },
+        { "name": "JavaScript (ES6+)", "level": 85, "status": "learned" },
+        { "name": "TypeScript", "level": 78, "status": "learned" },
+        { "name": "React Js", "level": 85, "status": "learned" },
+        { "name": "Next Js", "level": 80, "status": "learned" }
+      ]
+    },
+    {
+      "id": "backend",
+      "title": "Backend",
+      "description": "APIs that stay calm under pressure",
+      "skills": [
+        { "name": "Node.js", "level": 78, "status": "learned" },
+        { "name": "Express.js", "level": 80, "status": "learned" },
+        { "name": "REST API Design", "level": 82, "status": "learned" },
+        { "name": "Authentication (JWT)", "level": 72, "status": "learned" },
+        { "name": "Next.js Server Actions", "level": 65, "status": "learning" },
+        { "name": "System Design", "level": 45, "status": "learning" }
+      ]
+    },
+    {
+      "id": "databases",
+      "title": "Databases",
+      "description": "Data modeled for real use",
+      "skills": [
+        { "name": "MongoDB", "level": 78, "status": "learned" },
+        { "name": "Mongoose ODM", "level": 74, "status": "learned" },
+        { "name": "Supabase", "level": 40, "status": "learning" },
+        { "name": "MySQL", "level": 25, "status": "learning" },
+        { "name": "PostgreSQL", "level": 30, "status": "learning" }
+      ]
+    },
+    {
+      "id": "tools",
+      "title": "Tools & Workflow",
+      "description": "Ship fast without breaking things",
+      "skills": [
+        { "name": "Git & GitHub", "level": 85, "status": "learned" },
+        { "name": "VS Code", "level": 90, "status": "learned" },
+        { "name": "Deployment", "level": 70, "status": "learned" },
+        { "name": "Opencode", "level": 75, "status": "learned" },
+        { "name": "Docker (basics)", "level": 15, "status": "learning" }
+      ]
+    }
+  ],
+  "softSkills": [
+    {
+      "name": "Problem Solving",
+      "description": "Breaking big bugs into small wins",
+      "level": 91
+    },
+    {
+      "name": "Communication",
+      "description": "Clear updates, honest timelines",
+      "level": 94
+    },
+    {
+      "name": "AI Adaptability",
+      "description": "Fast learner with AI leverage",
+      "level": 98
+    },
+    {
+      "name": "Collaboration",
+      "description": "Reviews, pair-debugging, docs",
+      "level": 93
+    },
+    {
+      "name": "Management",
+      "description": "Time conscious, shipped projects",
+      "level": 96
+    }
+  ],
+  "education": [
+    {
+      "degree": "BSS in Political Science (Ongoing)",
+      "institution": "National University - Dhaka, Bangladesh",
+      "period": "2020 — Present",
+      "details": "Relevant coursework: Political Fundamental, Thoughts & Political Development, Regional Political Affairs, Public Administration, Political & Constitutional Development."
+    },
+    {
+      "degree": "Higher Secondary Certificate (HSC) - Science",
+      "institution": "Government Kaliganj Sramik College - Bangladesh",
+      "period": "2017 — 2020",
+      "details": "Focused on standard science major topics - Physics, Chemistry, Biology, Higher Math & ICT."
+    }
+  ],
+  "certifications": [
+    {
+      "title": "Complete Web Development Course",
+      "issuer": "Programming Hero (Placeholder)",
+      "year": "2026",
+      "credentialUrl": "https://example.com/certificate-1",
+      "skills": [
+        "TypeScript",
+        "React",
+        "Next.js",
+        "BetterAuth",
+        "Node.js",
+        "Express",
+        "MongoDB"
+      ]
+    }
+  ],
+  "experiences": []
+}
