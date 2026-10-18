@@ -12,7 +12,6 @@ import {
   Github,
   Layers,
 } from "@/components/ui/icons";
-import { ContactCta } from "@/components/sections/contact-cta";
 import {
   PROJECT_STATUS_LABEL,
   getProjectBySlug,
@@ -23,6 +22,16 @@ import {
 interface ProjectPageProps {
   params: Promise<{ slug: string }>;
 }
+
+/**
+ * Instant-navigation validation (Cache Components) flags reading `params`
+ * outside a `<Suspense>` boundary, because that would tie one shared prefetched
+ * shell to a single URL. Here both `generateMetadata` and the whole page body
+ * are derived from `slug`, so there is no URL-independent shell worth
+ * prefetching — the documented `[block]` option fits this route shape.
+ * See https://nextjs.org/docs/messages/instant-shell-url-data
+ */
+export const instant = false;
 
 export function generateStaticParams() {
   return getProjectSlugs().map((slug) => ({ slug }));
@@ -78,7 +87,10 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           <div className="flex flex-col gap-4">
             <div className="flex flex-wrap items-center gap-2 font-mono text-xs text-muted">
               {meta.map((item, index) => (
-                <span key={item.label} className="inline-flex items-center gap-2">
+                <span
+                  key={item.label}
+                  className="inline-flex items-center gap-2"
+                >
                   {index > 0 ? (
                     <span aria-hidden className="text-line">
                       /
@@ -133,7 +145,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       >
         <Container className="py-10 sm:py-12">
           {project.image ? (
-            <div className="relative aspect-[16/10] overflow-hidden rounded-card border border-line bg-surface">
+            <div className="relative aspect-16/10 overflow-hidden rounded-card border border-line bg-surface">
               <Image
                 src={project.image}
                 alt={`${project.title} — screenshot of the interface`}
@@ -146,7 +158,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           ) : (
             <div
               aria-hidden
-              className="bg-grid grid aspect-[16/10] place-items-center rounded-card border border-line bg-surface"
+              className="bg-grid grid aspect-16/10 place-items-center rounded-card border border-line bg-surface"
             >
               <span className="font-mono text-sm text-muted">
                 Screenshot coming soon
@@ -291,8 +303,6 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           </Container>
         </section>
       ) : null}
-
-      <ContactCta />
     </>
   );
 }

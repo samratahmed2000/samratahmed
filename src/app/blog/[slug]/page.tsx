@@ -4,23 +4,12 @@ import { notFound } from "next/navigation";
 import { Container } from "@/components/ui/container";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight } from "@/components/ui/icons";
-import { ContactCta } from "@/components/sections/contact-cta";
 import { getPostBySlug, getPostSlugs } from "@/data/blog";
 
 interface PostPageProps {
   params: Promise<{ slug: string }>;
 }
 
-/*
- * Cache Components requires every `generateStaticParams` to return at least one
- * entry. The blog has no posts yet, so we return a placeholder slug that
- * resolves to not-found at build time. This also lets Next.js return a real 404
- * status for unknown slugs. Once `posts` is non-empty, the real slugs are
- * returned and the placeholder disappears.
- *
- * `instant = false` opts this route out of shell prerendering, which is required
- * because the root layout reads `usePathname()`.
- */
 export const instant = false;
 
 export function generateStaticParams() {
@@ -103,8 +92,6 @@ export default async function BlogPostPage({ params }: PostPageProps) {
           </section>
         ) : null}
       </article>
-
-      <ContactCta />
     </>
   );
 }

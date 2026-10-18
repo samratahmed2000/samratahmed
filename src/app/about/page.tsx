@@ -10,7 +10,6 @@ import { buttonClasses } from "@/components/ui/button";
 import { ArrowRight, MapPin, Sparkle } from "@/components/ui/icons";
 import { Process } from "@/components/sections/process";
 import { Education } from "@/components/sections/education";
-import { ContactCta } from "@/components/sections/contact-cta";
 import { aboutCards, site } from "@/data/site";
 
 export const metadata: Metadata = {
@@ -116,7 +115,6 @@ export default function AboutPage() {
 
       <Process />
       <Education />
-      <ContactCta />
     </>
   );
 }

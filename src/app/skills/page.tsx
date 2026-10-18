@@ -6,7 +6,6 @@ import { SectionHeading } from "@/components/ui/section-heading";
 import { buttonClasses } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight } from "@/components/ui/icons";
-import { ContactCta } from "@/components/sections/contact-cta";
 import { learnedSkillsCount, skillCategories, softSkills } from "@/data/skills";
 import { cn } from "@/lib/utils";
 
@@ -140,8 +139,6 @@ export default function SkillsPage() {
           </div>
         </Container>
       </section>
-
-      <ContactCta />
     </>
   );
 }

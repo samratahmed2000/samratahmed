@@ -17,7 +17,6 @@ function initialsFrom(title: string): string {
 
 interface ProjectCardProps {
   project: Project;
-  /** Priority-load the thumbnail (used for the first card on a page). */
   priority?: boolean;
 }
 
@@ -27,15 +26,8 @@ export function ProjectCard({ project, priority = false }: ProjectCardProps) {
   const extraTech = project.technologies.length - visibleTech.length;
 
   return (
-    <article className="group flex h-full flex-col overflow-hidden rounded-card border border-line bg-card/60 transition-colors duration-200 hover:border-accent/40">
-      <Link
-        href={`/projects/${project.slug}`}
-        className="block"
-        tabIndex={-1}
-        aria-hidden
-      >
-        <ProjectThumb project={project} priority={priority} />
-      </Link>
+    <article className="group relative flex h-full flex-col overflow-hidden rounded-card border border-line bg-card/60 transition-colors duration-200 hover:border-accent/40 focus-within:border-accent/60">
+      <ProjectThumb project={project} priority={priority} />
 
       <div className="flex flex-1 flex-col gap-4 p-5">
         <div className="flex flex-wrap items-center gap-2 font-mono text-xs text-muted">
@@ -62,7 +54,7 @@ export function ProjectCard({ project, priority = false }: ProjectCardProps) {
           <h3 className="text-lg font-semibold tracking-tight text-foreground">
             <Link
               href={`/projects/${project.slug}`}
-              className="transition-colors hover:text-accent"
+              className="transition-colors after:absolute after:inset-0 after:rounded-card after:content-[''] group-hover:text-accent"
             >
               {project.title}
             </Link>
@@ -86,20 +78,17 @@ export function ProjectCard({ project, priority = false }: ProjectCardProps) {
         </ul>
 
         <div className="mt-auto flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-line/70 pt-4 text-sm">
-          <Link
-            href={`/projects/${project.slug}`}
-            className="inline-flex items-center gap-1.5 font-medium text-foreground transition-colors hover:text-accent"
-          >
+          <span className="inline-flex items-center gap-1.5 font-medium text-foreground transition-colors group-hover:text-accent">
             Case study
             <ArrowUpRight className="h-4 w-4" />
-          </Link>
+          </span>
 
           {project.liveUrl ? (
             <a
               href={project.liveUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-muted transition-colors hover:text-accent"
+              className="relative z-10 inline-flex items-center gap-1.5 text-muted transition-colors hover:text-accent"
             >
               Live site
               <ArrowUpRight className="h-4 w-4" />
@@ -111,7 +100,7 @@ export function ProjectCard({ project, priority = false }: ProjectCardProps) {
               href={project.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-muted transition-colors hover:text-accent"
+              className="relative z-10 inline-flex items-center gap-1.5 text-muted transition-colors hover:text-accent"
             >
               <Github className="h-4 w-4" />
               Code
@@ -134,7 +123,7 @@ function ProjectThumb({
     return (
       <div
         aria-hidden
-        className="bg-grid grid aspect-[16/10] place-items-center border-b border-line bg-surface"
+        className="bg-grid grid aspect-16/10 place-items-center border-b border-line bg-surface"
       >
         <span className="font-mono text-3xl font-semibold text-accent">
           {initialsFrom(project.title)}
@@ -144,7 +133,7 @@ function ProjectThumb({
   }
 
   return (
-    <div className="relative aspect-[16/10] overflow-hidden border-b border-line bg-surface">
+    <div className="relative aspect-16/10 overflow-hidden border-b border-line bg-surface">
       <Image
         src={project.image}
         alt={`${project.title} — interface preview`}

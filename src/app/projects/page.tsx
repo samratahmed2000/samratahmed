@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { PageHeader } from "@/components/layout/page-header";
 import { Container } from "@/components/ui/container";
-import { ContactCta } from "@/components/sections/contact-cta";
 import { ProjectExplorer } from "@/components/projects/project-explorer";
 import { projectTechnologies, projects } from "@/data/projects";
 
@@ -29,14 +28,13 @@ export default function ProjectsPage() {
           <h2 id="projects-list-heading" className="sr-only">
             All projects
           </h2>
+
           <ProjectExplorer
             projects={projects}
             technologies={projectTechnologies}
           />
         </Container>
       </section>
-
-      <ContactCta />
     </>
   );
 }

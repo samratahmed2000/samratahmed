@@ -21,7 +21,8 @@ export function ProjectExplorer({
   const results = useMemo(() => {
     const q = query.trim().toLowerCase();
     return projects.filter((project) => {
-      const matchesTech = !activeTech || project.technologies.includes(activeTech);
+      const matchesTech =
+        !activeTech || project.technologies.includes(activeTech);
       if (!matchesTech) return false;
       if (!q) return true;
       return (

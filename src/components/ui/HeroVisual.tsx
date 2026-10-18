@@ -11,9 +11,7 @@ export function HeroVisual() {
           <span aria-hidden className="h-3 w-3 rounded-full bg-accent/70" />
           <span aria-hidden className="h-3 w-3 rounded-full bg-line" />
           <span aria-hidden className="h-3 w-3 rounded-full bg-line" />
-          <span className="ml-2 font-mono text-xs text-muted">
-            samrat@portfolio
-          </span>
+          <span className="ml-2 font-mono text-xs text-muted">samratahmed</span>
         </div>
 
         <dl className="mt-5 space-y-5 font-mono text-xs leading-relaxed sm:text-sm">

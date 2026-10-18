@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { PageHeader } from "@/components/layout/page-header";
 import { buttonClasses } from "@/components/ui/button";
 import { ArrowRight, Download } from "@/components/ui/icons";
-import { ContactCta } from "@/components/sections/contact-cta";
 import { site } from "@/data/site";
 
 export const metadata: Metadata = {
@@ -43,8 +42,6 @@ export default function ResumePage() {
           </div>
         ) : null}
       </PageHeader>
-
-      <ContactCta />
     </>
   );
 }

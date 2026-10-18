@@ -5,7 +5,6 @@ import { Container } from "@/components/ui/container";
 import { buttonClasses } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Book } from "@/components/ui/icons";
-import { ContactCta } from "@/components/sections/contact-cta";
 import { posts } from "@/data/blog";
 
 export const metadata: Metadata = {
@@ -107,8 +106,6 @@ export default function BlogPage() {
           )}
         </Container>
       </section>
-
-      <ContactCta />
     </>
   );
 }
