@@ -16,10 +16,6 @@ const sizes: Record<Size, string> = {
   lg: "h-12 px-6 text-sm sm:text-base",
 };
 
-/**
- * Shared button classes so anchors, links, and buttons stay visually consistent.
- * Colours are driven by the theme tokens in `globals.css`.
- */
 export function buttonClasses(
   variant: Variant = "primary",
   size: Size = "md",

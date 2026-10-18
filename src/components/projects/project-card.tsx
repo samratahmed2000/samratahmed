@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { ArrowUpRight, Github } from "@/components/ui/icons";
 import { PROJECT_STATUS_LABEL } from "@/data/projects";
-import type { Project } from "@/types";
+import type { Project } from "@/types/type";
 
 function initialsFrom(title: string): string {
   return title

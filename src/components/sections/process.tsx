@@ -16,7 +16,7 @@ export function Process() {
           id="process-heading"
           eyebrow="Process"
           title="How I build, with AI as a tool"
-          description="A four-step workflow that keeps AI assistance transparent — I plan, review, debug and test rather than pasting generated code blindly."
+          description="A four-step workflow that keeps AI assistance transparent - I plan, review, debug and test rather than pasting generated code blindly."
         />
 
         <ol className="grid gap-5 sm:grid-cols-2">

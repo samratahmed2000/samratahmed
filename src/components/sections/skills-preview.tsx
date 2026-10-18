@@ -64,7 +64,9 @@ export function SkillsPreview() {
               <ul className="mt-4 flex flex-wrap gap-2">
                 {category.skills.map((skill) => (
                   <li key={skill.name}>
-                    <Badge tone={skill.status === "learned" ? "accent" : "muted"}>
+                    <Badge
+                      tone={skill.status === "learned" ? "accent" : "muted"}
+                    >
                       <span
                         aria-hidden
                         className={cn(

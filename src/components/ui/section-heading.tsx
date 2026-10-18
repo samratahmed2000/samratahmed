@@ -10,10 +10,6 @@ interface SectionHeadingProps {
   id?: string;
 }
 
-/**
- * Consistent section header: small uppercase eyebrow, heading, and optional lead.
- * Keeps heading order predictable for screen readers.
- */
 export function SectionHeading({
   eyebrow,
   title,

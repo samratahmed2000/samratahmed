@@ -4,7 +4,7 @@ import { useMemo, useState } from "react";
 import { ProjectCard } from "@/components/projects/project-card";
 import { Search, Close } from "@/components/ui/icons";
 import { cn } from "@/lib/utils";
-import type { Project } from "@/types";
+import type { Project } from "@/types/type";
 
 interface ProjectExplorerProps {
   projects: Project[];

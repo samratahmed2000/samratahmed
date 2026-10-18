@@ -13,7 +13,6 @@ const tones = {
   muted: "border-line/70 bg-transparent text-muted",
 };
 
-/** Small pill label for technologies, tags, and statuses. */
 export function Badge({ children, className, tone = "default" }: BadgeProps) {
   return (
     <span

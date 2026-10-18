@@ -12,6 +12,7 @@ const staticRoutes: Array<{
   { path: "/about", changeFrequency: "monthly", priority: 0.8 },
   { path: "/projects", changeFrequency: "monthly", priority: 0.9 },
   { path: "/skills", changeFrequency: "monthly", priority: 0.7 },
+  { path: "/resume", changeFrequency: "monthly", priority: 0.6 },
   { path: "/blog", changeFrequency: "weekly", priority: 0.6 },
   { path: "/contact", changeFrequency: "yearly", priority: 0.6 },
   { path: "/privacy", changeFrequency: "yearly", priority: 0.3 },

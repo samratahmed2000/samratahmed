@@ -15,7 +15,6 @@ const definitions: Array<{
   { key: "whatsapp", label: "WhatsApp", Icon: Whatsapp },
 ];
 
-/** Only links that are actually configured in the data are rendered. */
 function getConfiguredLinks() {
   return definitions.filter(({ key }) => Boolean(site.socials[key]));
 }
@@ -25,7 +24,10 @@ interface SocialLinksProps {
   showLabels?: boolean;
 }
 
-export function SocialLinks({ className, showLabels = false }: SocialLinksProps) {
+export function SocialLinks({
+  className,
+  showLabels = false,
+}: SocialLinksProps) {
   const links = getConfiguredLinks();
   if (links.length === 0) return null;
 

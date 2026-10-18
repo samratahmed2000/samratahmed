@@ -36,6 +36,7 @@ yarn-error.log*
 .env.local
 PROMPT.md
 AGENTS.md
+db.json
 
 # vercel
 .vercel

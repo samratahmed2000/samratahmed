@@ -104,8 +104,9 @@ Place real files in `public/images/`:
 - `project-bazardor.png`, `project-fit-log.png`, `project-devstack.png` —
   project previews (present).
 - `hero.png` — portrait used on the About page (present).
-- `Samrat-Ahmed-Resume.pdf` — optional. Add the file **and** set `resumeUrl` in
-  `src/data/site.ts` to enable a resume link.
+- `resume.pdf` — the résumé shown on `/resume` (present). `src/data/site.ts`
+  sets `resumeUrl` to `/resume.pdf`; the page previews it inline and offers
+  download / new-tab links.
 
 If a project image is missing, the card falls back to a typographic placeholder
 instead of showing a broken image.

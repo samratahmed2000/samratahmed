@@ -1,13 +1,6 @@
 import raw from "../../db.json";
-import type { SkillCategory, SoftSkill } from "@/types";
+import type { SkillCategory, SoftSkill } from "@/types/type";
 
-/**
- * Skills grouped by category.
- *
- * Integrity note: the numeric `level` values in `db.json` are intentionally
- * ignored. They are not objective measurements, so the UI only distinguishes
- * "learned / in use" from "currently learning".
- */
 export const skillCategories: SkillCategory[] = raw.skillCategories.map(
   (category) => ({
     id: category.id,
@@ -20,7 +13,6 @@ export const skillCategories: SkillCategory[] = raw.skillCategories.map(
   }),
 );
 
-/** Soft skills are shown as plain, described strengths (no percentages). */
 export const softSkills: SoftSkill[] = raw.softSkills.map((skill) => ({
   name: skill.name,
   description: skill.description,

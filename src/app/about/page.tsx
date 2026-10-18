@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import hero from "../../../public/images/hero.png";
 import Link from "next/link";
 import { PageHeader } from "@/components/layout/page-header";
 import { Container } from "@/components/ui/container";
+import { HeroVisual } from "@/components/ui/HeroVisual";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { buttonClasses } from "@/components/ui/button";
 import { ArrowRight, MapPin, Sparkle } from "@/components/ui/icons";
@@ -13,29 +15,33 @@ import { aboutCards, site } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "About",
-  description: `Learn about ${site.name} — a practical, user-focused web developer working with React, Next.js, TypeScript, Node.js and MongoDB.`,
+  description: `Learn about ${site.name} - a practical, user-focused web developer working with React, Next.js, TypeScript, Node.js and MongoDB.`,
   alternates: { canonical: "/about" },
 };
 
 export default function AboutPage() {
   return (
     <>
-      <PageHeader
-        eyebrow="About"
-        title={`Hi, I'm ${site.name} — an AI-driven web application engineer`}
-        description={site.shortBio}
-      >
-        <div className="flex flex-wrap items-center gap-4 text-sm text-muted">
-          <span className="inline-flex items-center gap-2">
-            <MapPin className="h-4 w-4 text-accent" />
-            {site.location}
-          </span>
-          <span className="inline-flex items-center gap-2">
-            <Sparkle className="h-4 w-4 text-accent" />
-            {site.availability}
-          </span>
-        </div>
-      </PageHeader>
+      <Container className="flex flex-col lg:flex-row justify-between py-8 gap-6">
+        <PageHeader
+          eyebrow="About"
+          title={`Hi, I'm ${site.name}, an AI-driven web application engineer`}
+          description={site.shortBio}
+        >
+          <div className="flex flex-wrap items-center gap-4 text-sm text-muted">
+            <span className="inline-flex items-center gap-2">
+              <MapPin className="h-4 w-4 text-accent" />
+              {site.location}
+            </span>
+            <span className="inline-flex items-center gap-2">
+              <Sparkle className="h-4 w-4 text-accent" />
+              {site.availability}
+            </span>
+          </div>
+        </PageHeader>
+
+        <HeroVisual />
+      </Container>
 
       <section
         aria-labelledby="story-heading"
@@ -45,7 +51,7 @@ export default function AboutPage() {
           <div className="relative mx-auto w-full max-w-sm lg:mx-0">
             <div className="overflow-hidden rounded-card border border-line bg-card/60">
               <Image
-                src="/images/hero.png"
+                src={hero}
                 alt={`Portrait of ${site.name}`}
                 width={1024}
                 height={1024}
@@ -97,7 +103,10 @@ export default function AboutPage() {
                 See my projects
                 <ArrowRight />
               </Link>
-              <Link href="/contact" className={buttonClasses("secondary", "md")}>
+              <Link
+                href="/contact"
+                className={buttonClasses("secondary", "md")}
+              >
                 Get in touch
               </Link>
             </div>
