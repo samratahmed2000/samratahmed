@@ -46,9 +46,7 @@ export function ContactForm() {
 
   const update =
     (key: keyof FormValues) =>
-    (
-      event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-    ) => {
+    (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
       const value = event.target.value;
       setValues((current) => ({ ...current, [key]: value }));
       setErrors((current) => {
@@ -59,7 +57,7 @@ export function ContactForm() {
       });
     };
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (event: React.SubmitEvent<HTMLFormElement>) => {
     event.preventDefault();
     const nextErrors = validate(values);
     setErrors(nextErrors);
@@ -86,12 +84,7 @@ export function ContactForm() {
       className="flex flex-col gap-5 rounded-card border border-line bg-card/50 p-6 sm:p-8"
     >
       <div className="grid gap-5 sm:grid-cols-2">
-        <Field
-          id="contact-name"
-          label="Your name"
-          required
-          error={errors.name}
-        >
+        <Field id="contact-name" label="Your name" required error={errors.name}>
           <input
             id="contact-name"
             name="name"
@@ -105,7 +98,7 @@ export function ContactForm() {
               fieldClasses,
               errors.name ? "border-red-400/70" : "border-line",
             )}
-            placeholder="Jane Doe"
+            placeholder="Ahmed"
           />
         </Field>
 
@@ -128,7 +121,7 @@ export function ContactForm() {
               fieldClasses,
               errors.email ? "border-red-400/70" : "border-line",
             )}
-            placeholder="jane@example.com"
+            placeholder="ahmed@mail.com"
           />
         </Field>
       </div>
@@ -173,13 +166,8 @@ export function ContactForm() {
       <div className="flex flex-col gap-3">
         <button type="submit" className={buttonClasses("primary", "lg")}>
           <Mail />
-          Open message in email app
+          Message Me
         </button>
-        <p className="text-xs leading-relaxed text-muted">
-          This form doesn&apos;t send anything from the site itself. It opens
-          your email app with the message pre-filled, and you send it from your
-          own address.
-        </p>
       </div>
 
       {opened ? (
@@ -189,14 +177,11 @@ export function ContactForm() {
         >
           <Check className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
           <span>
-            Your email app should now be open with the message ready to send. If
-            nothing opened, email me directly at{" "}
+            Thank You for your valuable moments.
             <a
               href={`mailto:${site.email}`}
               className="text-accent underline underline-offset-2"
-            >
-              {site.email}
-            </a>
+            ></a>
             .
           </span>
         </p>
