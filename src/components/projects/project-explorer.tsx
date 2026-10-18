@@ -3,6 +3,11 @@
 import { useMemo, useState } from "react";
 import { ProjectCard } from "@/components/projects/project-card";
 import { Search, Close } from "@/components/ui/icons";
+import {
+  canonicalSearchTerm,
+  projectSearchText,
+  projectUsesTechnology,
+} from "@/data/projects";
 import { cn } from "@/lib/utils";
 import type { Project } from "@/types/type";
 
@@ -19,18 +24,23 @@ export function ProjectExplorer({
   const [activeTech, setActiveTech] = useState<string | null>(null);
 
   const results = useMemo(() => {
-    const q = query.trim().toLowerCase();
+    // Each word must match somewhere, so "react tailwind" narrows instead of
+    // widening the result set.
+    const terms = query
+      .trim()
+      .toLowerCase()
+      .split(/\s+/)
+      .filter(Boolean)
+      .map(canonicalSearchTerm);
+
     return projects.filter((project) => {
-      const matchesTech =
-        !activeTech || project.technologies.includes(activeTech);
-      if (!matchesTech) return false;
-      if (!q) return true;
-      return (
-        project.title.toLowerCase().includes(q) ||
-        project.tagline.toLowerCase().includes(q) ||
-        project.description.toLowerCase().includes(q) ||
-        project.technologies.some((tech) => tech.toLowerCase().includes(q))
-      );
+      if (activeTech && !projectUsesTechnology(project, activeTech)) {
+        return false;
+      }
+      if (terms.length === 0) return true;
+
+      const searchText = projectSearchText(project);
+      return terms.every((term) => searchText.includes(term));
     });
   }, [projects, query, activeTech]);
 
@@ -46,7 +56,7 @@ export function ProjectExplorer({
       <div className="flex flex-col gap-5">
         <div role="search" className="relative">
           <label htmlFor="project-search" className="sr-only">
-            Search projects by title or technology
+            Search projects by title, tag or keyword
           </label>
           <Search className="pointer-events-none absolute top-1/2 left-4 h-4 w-4 -translate-y-1/2 text-muted" />
           <input
@@ -54,7 +64,7 @@ export function ProjectExplorer({
             type="search"
             value={query}
             onChange={(event) => setQuery(event.target.value)}
-            placeholder="Search by title or technology…"
+            placeholder="Search by title, tag or keyword…"
             className="h-12 w-full rounded-pill border border-line bg-card/60 pr-4 pl-11 text-sm text-foreground placeholder:text-muted/80 focus:border-accent/60 focus:outline-none"
           />
         </div>
@@ -130,7 +140,7 @@ export function ProjectExplorer({
             No projects match those filters
           </p>
           <p className="text-sm text-muted">
-            Try a different technology or clear the search to see everything
+            Try another tag or keyword, or clear the filters to see everything
             again.
           </p>
           <button
