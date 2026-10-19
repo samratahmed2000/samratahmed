@@ -1,3 +1,4 @@
+import { cacheLife } from "next/cache";
 import { Hero } from "@/components/sections/hero";
 import { AboutPreview } from "@/components/sections/about-preview";
 import { FeaturedProjects } from "@/components/sections/featured-projects";
@@ -7,7 +8,10 @@ import { Education } from "@/components/sections/education";
 import { BlogPreview } from "@/components/sections/blog-preview";
 import { ContactCta } from "@/components/sections/contact-cta";
 
-const HomePage = () => {
+const HomePage = async () => {
+  "use cache";
+  cacheLife("portfolio");
+
   return (
     <>
       <Hero />

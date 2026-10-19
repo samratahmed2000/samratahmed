@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { cacheLife } from "next/cache";
 import { PageHeader } from "@/components/layout/page-header";
 import { buttonClasses } from "@/components/ui/button";
 import { ArrowRight, Download } from "@/components/ui/icons";
@@ -12,7 +13,10 @@ export const metadata: Metadata = {
 
 const resumeUrl = site.resumeUrl;
 
-export default function ResumePage() {
+export default async function ResumePage() {
+  "use cache";
+  cacheLife("portfolio");
+
   return (
     <>
       <PageHeader

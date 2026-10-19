@@ -76,7 +76,7 @@
       "longDescription": [
         "BazarDor is a Bangla-focused product price comparison platform designed to help users explore product prices, understand market trends, and make more informed purchasing decisions. The platform provides a convenient way to browse products, examine available price ranges, and identify products whose prices are increasing or decreasing, making it easier for users to stay informed about changing market conditions. BazarDor features dedicated sections for rising and falling prices, allowing users to discover price movements and compare product information more efficiently. Its product sorting functionality enhances the browsing experience by helping users organize listings and find relevant products with greater ease. By bringing product information and price trends together in one platform, BazarDor aims to make market price exploration more accessible and user-friendly for Bangla-speaking consumers. The platform also includes a secure, user-friendly authentication system powered by Better Auth, supporting email and password authentication as well as Google and GitHub sign-in options. Registered users can access their accounts, view their profile information, and update their personal details through the profile management features. Built with Next.js, React, and TypeScript, BazarDor uses a modern web development architecture to deliver a responsive and maintainable user experience. Better Auth integrates with MongoDB for authentication data storage, while React Icons provides interface icons, React Toastify handles toast notifications, and react-marquee-text supports scrolling text elements within the interface. Overall, BazarDor combines product price comparison, market price movement tracking, intuitive product browsing, and user account management in a single web application. Its goal is to help users better understand product pricing and navigate market information with greater convenience and confidence."
       ],
-      "image": "/images/project-bazardor.png",
+      "image": "/images/project-bazardor.webp",
       "gradient": "from-emerald-400 via-teal-500 to-cyan-600",
       "technologies": ["Next.js", "React.js", "TypeScript", "BetterAuth"],
       "keyFeatures": [
@@ -112,7 +112,7 @@
       "longDescription": [
         "A modern workout tracking web application built with Next.js. Browse workouts, view detailed exercise information, save workouts for later, and build a personalized plan for today's workout."
       ],
-      "image": "/images/project-fit-log.png",
+      "image": "/images/project-fit-log.webp",
       "gradient": "from-emerald-300 via-green-500 to-emerald-700",
       "technologies": ["React", "Next.js", "JavaScript", "Tailwind CSS"],
       "keyFeatures": [
@@ -137,7 +137,7 @@
       "longDescription": [
         "DevStack is a simple and interactive web application that helps developers explore different technologies and build their ideal development stack. Users can view details such as difficulty and rating, and add their preferred technologies to their stack. They can also remove individual technologies or clear the entire stack. The application provides categories such as frontend, backend, database, and development tools, allowing users to compare available options and create a personalized technology stack."
       ],
-      "image": "/images/project-devstack.png",
+      "image": "/images/project-devstack.webp",
       "gradient": "from-teal-300 via-emerald-500 to-green-800",
       "technologies": ["React.js", "TypeScript", "Tailwind CSS"],
       "keyFeatures": [

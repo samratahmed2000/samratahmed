@@ -62,6 +62,22 @@ All content is normalised in `src/data/`:
 Site-wide visual tokens (colours, fonts, radius) live in the `@theme` block of
 `src/app/globals.css`.
 
+### Content revalidation
+
+The app runs with `cacheComponents: true`, so route-level
+`export const revalidate` is not available (Next.js 16 removed it under Cache
+Components). Instead the `portfolio` cache profile in `next.config.ts` sets
+`revalidate: 300` (5 minutes), and the content pages opt in with:
+
+```tsx
+"use cache";
+cacheLife("portfolio");
+```
+
+Applied to `/`, `/about`, `/projects`, `/blog`, `/skills` and `/resume`. Change
+`CONTENT_REVALIDATE_SECONDS` in `next.config.ts` to adjust the interval for all
+of them.
+
 ### Content integrity rules applied
 
 This portfolio deliberately avoids unsupported claims:
@@ -87,8 +103,14 @@ Set a canonical base URL for SEO metadata, sitemap and robots output:
 NEXT_PUBLIC_SITE_URL=https://your-domain.example
 ```
 
-If it is not set, the site falls back to `http://localhost:3000`. No deployed
-domain is assumed.
+If it is not set, `siteUrl` falls back to Vercel's own production/preview domain
+(`VERCEL_PROJECT_PRODUCTION_URL`, then `VERCEL_URL`), so a deployment never
+advertises `localhost`. Only outside Vercel does it fall back to
+`http://localhost:3000`.
+
+If the value is missing from your Open Graph tags, `sitemap.xml` or
+`robots.txt`, that fallback failed — set `NEXT_PUBLIC_SITE_URL` explicitly and
+redeploy.
 
 ## Contact form behaviour
 
@@ -101,12 +123,16 @@ If you later add a real delivery service, keep credentials server-side only.
 
 Place real files in `public/images/`:
 
-- `project-bazardor.png`, `project-fit-log.png`, `project-devstack.png` —
+- `project-bazardor.webp`, `project-fit-log.webp`, `project-devstack.webp` —
   project previews (present).
-- `hero.png` — portrait used on the About page (present).
+- `hero.webp` — portrait used on the hero and About page (present).
 - `resume.pdf` — the résumé shown on `/resume` (present). `src/data/site.ts`
   sets `resumeUrl` to `/resume.pdf`; the page previews it inline and offers
   download / new-tab links.
+
+Images are served as WebP so the Next.js image optimizer never has to decode a
+multi-megabyte PNG. `hero.png` was ~1.74 MB; `hero.webp` is ~74 KB at the same
+1024×1024 dimensions. Keep new assets compressed before committing.
 
 If a project image is missing, the card falls back to a typographic placeholder
 instead of showing a broken image.
@@ -115,8 +141,21 @@ instead of showing a broken image.
 
 1. Push the repository to GitHub.
 2. Import the project in Vercel — the Next.js preset is detected automatically.
-3. Add the `NEXT_PUBLIC_SITE_URL` environment variable with your production URL.
+3. Add the `NEXT_PUBLIC_SITE_URL` environment variable with your production URL
+   (for example `https://your-domain.com`) for the Production and Preview
+   environments.
 4. Deploy. No database, authentication or other services are required.
+
+### Use a custom domain
+
+Attach a real domain (Vercel → Project → **Settings → Domains**) rather than
+sharing only the free `*.vercel.app` address. The free address is served from
+Vercel's shared anycast IPs, and some ISPs intermittently blackhole or throttle
+them, which surfaces as a long hang followed by "web page not available" in the
+browser — not as an application error. A custom domain resolves through
+`cname.vercel-dns.com` on a different IP range and avoids that class of problem.
+After adding the domain, set `NEXT_PUBLIC_SITE_URL` to it and redeploy so
+canonical URLs, `sitemap.xml` and `robots.txt` use the new host.
 
 ## Known limitations
 

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { cacheLife } from "next/cache";
 import Link from "next/link";
 import { PageHeader } from "@/components/layout/page-header";
 import { Container } from "@/components/ui/container";
@@ -14,7 +15,10 @@ export const metadata: Metadata = {
   alternates: { canonical: "/blog" },
 };
 
-export default function BlogPage() {
+export default async function BlogPage() {
+  "use cache";
+  cacheLife("portfolio");
+
   return (
     <>
       <PageHeader

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
+import { cacheLife } from "next/cache";
 import Image from "next/image";
-import hero from "../../../public/images/hero.png";
+import hero from "../../../public/images/hero.webp";
 import Link from "next/link";
 import { PageHeader } from "@/components/layout/page-header";
 import { Container } from "@/components/ui/container";
@@ -18,7 +19,10 @@ export const metadata: Metadata = {
   alternates: { canonical: "/about" },
 };
 
-export default function AboutPage() {
+export default async function AboutPage() {
+  "use cache";
+  cacheLife("portfolio");
+
   return (
     <>
       <Container className="flex flex-col lg:flex-row justify-between py-8 gap-6">
@@ -56,6 +60,7 @@ export default function AboutPage() {
                 height={1024}
                 sizes="(max-width: 1024px) 24rem, 20rem"
                 className="h-auto w-full object-cover"
+                placeholder="blur"
                 priority
               />
             </div>

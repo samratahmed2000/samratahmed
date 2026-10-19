@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { cacheLife } from "next/cache";
 import { PageHeader } from "@/components/layout/page-header";
 import { Container } from "@/components/ui/container";
 import { ProjectExplorer } from "@/components/projects/project-explorer";
@@ -11,7 +12,10 @@ export const metadata: Metadata = {
   alternates: { canonical: "/projects" },
 };
 
-export default function ProjectsPage() {
+export default async function ProjectsPage() {
+  "use cache";
+  cacheLife("portfolio");
+
   return (
     <>
       <PageHeader

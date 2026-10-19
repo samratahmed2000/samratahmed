@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { cacheLife } from "next/cache";
 import Link from "next/link";
 import { PageHeader } from "@/components/layout/page-header";
 import { Container } from "@/components/ui/container";
@@ -16,7 +17,10 @@ export const metadata: Metadata = {
   alternates: { canonical: "/skills" },
 };
 
-export default function SkillsPage() {
+export default async function SkillsPage() {
+  "use cache";
+  cacheLife("portfolio");
+
   return (
     <>
       <PageHeader

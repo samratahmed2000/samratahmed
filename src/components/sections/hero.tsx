@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import hero from "../../../public/images/hero.png";
+import hero from "../../../public/images/hero.webp";
 import { Container } from "@/components/ui/container";
 import { buttonClasses } from "@/components/ui/button";
 import { SocialLinks } from "@/components/ui/social-links";
@@ -77,6 +77,7 @@ export function Hero() {
                 height={1024}
                 sizes="(max-width: 1024px) 24rem, 32rem"
                 className="h-auto w-full object-cover"
+                placeholder="blur"
                 priority
               />
             </div>
