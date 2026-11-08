@@ -69,6 +69,42 @@
   ],
   "projects": [
     {
+      "slug": "studioSpace",
+      "title": "StudioSpace - Creative Studio Listing & Booking Platform",
+      "tagline": "discovering, booking, and listing creative studio spaces.",
+      "description": "StudioSpace is a full-stack marketplace where creative professionals discover, book, and list production spaces.",
+      "longDescription": [
+        "StudioSpace is a full-stack marketplace where creative professionals discover, book, and list production spaces. Hosts publish studios with photos, amenities, pricing, capacity, and availability, while visitors browse a curated catalog and reserve a space by date and time. The application pairs a Next.js front end with a dedicated Express and MongoDB API, keeping data fetching, authentication, and business rules cleanly separated. No mock data is used; the client talks directly to the running API. The client is built on the Next.js App Router with React Server Components. Server-side fetch helpers read live data with no caching, so listings, bookings, and wishlist entries always reflect the current database. The interface uses Tailwind CSS v4 and shadcn components built on Base UI, with a responsive layout, dark and light themes, route-level loading skeletons, and a custom not-found page. Layouts adapt from mobile to desktop without losing any controls. Authentication is handled by better-auth with email and password plus optional Google sign-in. Sessions are stored in MongoDB and issued as JWTs. A route proxy protects private pages, preserving the intended destination through registration and login, and the API verifies every token against the auth server's JWKS endpoint before allowing a write. Tokens are fetched on the client for mutations and on the server for scoped reads. Ownership and integrity are enforced on the server. Studio hosts are recorded from the verified token, so a user cannot create, edit, or delete another host's listing, and hosts cannot book their own space. Booking requests are checked for time overlaps before insertion, cancelled reservations stay visible until removed, and wishlists are scoped to the signed-in account. Every list has loading, empty, and error states, and destructive actions ask for confirmation before running. The result is a compact, production-shaped application with real CRUD, real auth, and real database rules."
+      ],
+      "image": "/images/project-studio-space.webp",
+      "gradient": "from-emerald-400 via-teal-500 to-cyan-600",
+      "technologies": ["Next.js", "TypeScript", "BetterAuth", "JWT", "Shadcn"],
+      "keyFeatures": [
+        "Authentication & Protected Routes",
+        "JWT-Secured API",
+        "Full Studio CRUD",
+        "Listing Ownership",
+        "My Bookings Management",
+        "Booking & Availability Checks",
+        "Wishlist Studios"
+      ],
+      "challenges": [
+        "Manage dynamic routes for categories & products",
+        "Sign in & sign up option setup",
+        "sorting product without string slug"
+      ],
+      "engineeringDecisions": [
+        "Secure private routes from un-authorized users"
+      ],
+      "futureImprovements": ["Stripe / SSLCommerz payment integration"],
+      "liveUrl": "https://studiospace-ass-08.vercel.app",
+      "githubUrl": "https://github.com/samratahmed2000/studio-space-client",
+      "githubServer": "https://github.com/samratahmed2000/studio-space-server",
+      "featured": true,
+      "year": "2026",
+      "role": "Junior Full Stack Engineer"
+    },
+    {
       "slug": "bazarDor",
       "title": "BazarDor - Price Comparison Platform",
       "tagline": "Product prices & user account management",
@@ -125,37 +161,6 @@
       "futureImprovements": [],
       "liveUrl": "https://assignment-06-fit-log.vercel.app",
       "githubUrl": "https://github.com/samratahmed2000/assignment-06",
-      "featured": true,
-      "year": "2026",
-      "role": "Frontend Engineer"
-    },
-    {
-      "slug": "devStack",
-      "title": "DevStack - Technology Stack Builder",
-      "tagline": "Helps developers explore different technologies",
-      "description": "DevStack is a simple and interactive web app. It helps explore different technologies and build ideal development stack.",
-      "longDescription": [
-        "DevStack is a simple and interactive web application that helps developers explore different technologies and build their ideal development stack. Users can view details such as difficulty and rating, and add their preferred technologies to their stack. They can also remove individual technologies or clear the entire stack. The application provides categories such as frontend, backend, database, and development tools, allowing users to compare available options and create a personalized technology stack."
-      ],
-      "image": "/images/project-devstack.webp",
-      "gradient": "from-teal-300 via-emerald-500 to-green-800",
-      "technologies": ["React.js", "TypeScript", "Tailwind CSS"],
-      "keyFeatures": [
-        "Add Technology to Stack",
-        "Remove One Technology",
-        "Remove All Technologies"
-      ],
-      "challenges": [
-        "State management for the different paths",
-        "Designing a UI that works on mobile and desktop"
-      ],
-      "engineeringDecisions": ["Using context api concept to managing states"],
-      "futureImprovements": [
-        "Adding different stack to explore more skills",
-        "Roadmap based on stack"
-      ],
-      "liveUrl": "https://assignment-05-devstack.vercel.app",
-      "githubUrl": "https://github.com/samratahmed2000/assignment-05",
       "featured": true,
       "year": "2026",
       "role": "Frontend Engineer"
