@@ -28,7 +28,7 @@ export default async function AboutPage() {
       <Container className="flex flex-col lg:flex-row justify-between py-8 gap-6">
         <PageHeader
           eyebrow="About"
-          title={`Hi, I'm ${site.name}, an AI-driven web application engineer`}
+          title={`Hi, I'm ${site.name}, a Junior AI-driven web application engineer`}
           description={site.shortBio}
         >
           <div className="flex flex-wrap items-center gap-4 text-sm text-muted">

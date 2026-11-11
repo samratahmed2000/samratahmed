@@ -144,6 +144,12 @@ multi-megabyte PNG. `hero.png` was ~1.74 MB; `hero.webp` is ~74 KB at the same
 If a project image is missing, the card falls back to a typographic placeholder
 instead of showing a broken image.
 
+The favicon is the same `SA` badge as the navbar, using the App Router file
+conventions in `src/app/`: `icon.svg` (scalable source), `favicon.ico`
+(16–48 px raster fallback) and `apple-icon.png` (180×180 touch icon). Colours
+mirror `--color-background` / `--color-accent`; keep all three in sync if the
+badge changes.
+
 ## Deployment (Vercel)
 
 1. Push the repository to GitHub.
